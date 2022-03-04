@@ -1,6 +1,9 @@
 
+//Metodo manneira de transferir dinheiro para outra conta
+
 public class TestaMetodo {
 	
+	//saldo
 	public static void main(String[] args) {
 		Conta contaDoPaulo = new Conta();           //Conta= class , contaDoPaulo variavel
 		contaDoPaulo.saldo =100;
@@ -8,16 +11,18 @@ public class TestaMetodo {
 		System.out.println(contaDoPaulo.saldo);
 		
 		
-		//objetivo identificar se é posivel a retirada do saque
+	//objetivo identificar se é posivel a retirada do saque
+		
 		boolean conseguiuRetirar = contaDoPaulo.saca(150);               // invocação de método é parenteses
 		System.out.println(contaDoPaulo.saldo);
 		System.out.println(conseguiuRetirar);
 		
-		
+	//deposita	
 		Conta contaDaMarcela = new Conta();
 		contaDaMarcela.deposita(1000);
-		
-		if(contaDaMarcela.transfere(3000, contaDoPaulo))  {
+	
+	//transfere
+		if(contaDaMarcela.transfere(800, contaDoPaulo))  {
 			System.out.println("transferencia com sucesso");
 		} else {
 			System.out.println("faltou dinheiro");

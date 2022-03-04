@@ -3,7 +3,7 @@ class Conta {
 	private double saldo;
 	int agencia;   //o valor dos atributos são zero , porem se colocar um valor esse representara o vazio
 	int numero;
-	Cliente titular ;                  //titular sera uma referencia para cliente
+	Cliente titular ;                  //titular sera uma especificação cliente
 	
 	public void deposita(double valor) {          //METODO  = definir o que um objeto sabe fazer. O comportamento é implementado dentro do método, ou seja uma maneira
 		this.saldo = this.saldo += valor;          //referência para este projeto = this (é um atributo e não variavel)
@@ -27,7 +27,7 @@ class Conta {
 		
 	}
 		
-	public double getSaldo() {
+	public double getSaldo() {   //maneira de acessar informação sem que as pessoas vejam
 		return this.saldo;
 	}
 }

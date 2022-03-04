@@ -10,8 +10,10 @@ public class TestaBanco {
 		Conta contaDoPaulo = new Conta();
 		contaDoPaulo.deposita(100);
 
+		
 		//associa o cliente Paulo a contaDoPaulo
-		contaDoPaulo.titular  = paulo;
+		
+		contaDoPaulo.titular  = paulo;                  //duas formas de referenciar ao mesmo objeto
 		System.out.println(contaDoPaulo.titular.nome);   //buscando informação contado paulo -> dentro titular -> dentro de nome
 		}
 
