@@ -1,11 +1,24 @@
 
 class Conta {
 	private double saldo;
-	private int agencia;   //o valor dos atributos são zero , porem se colocar um valor esse representara o vazio
+	private int agencia;  
 	private int numero;
-	private Cliente titular ;                  //titular sera uma referencia para cliente
+	private Cliente titular ;
 	
-	public void deposita(double valor) {          //METODO  = definir o que um objeto sabe fazer. O comportamento é implementado dentro do método, ou seja uma maneira
+	
+
+//Construtor padrão = rotina especialização
+	
+	public Conta(int agencia, int numero) {
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("estou criando uma conta" + this.numero);
+	}
+	
+	
+//metodos de trabalho
+	
+	public void deposita(double valor) {          
 		this.saldo = this.saldo += valor;          //referência para este projeto = this (é um atributo e não variavel)
 	}
 	
@@ -27,15 +40,20 @@ class Conta {
 		
 	}
 		
+		
+	//Metodo mantem informação encapsulada
+		//objetivo = Esconder o funcionamento do nosso objeto.
+			//nesse caso pode fazer varias alterações em um unico lugar.
+		
 	public double getSaldo() {
 		return this.saldo;
 	}
 	
-	public int getNumero() {
+	public int getNumero() {        //acessa o numero da conta
 		return this.numero;
 	}
 	
-	public void setNumero(int numero){
+	public void setNumero(int numero){   //modifica o numero da conta
 		this.numero = numero;
 	}
 	
@@ -44,6 +62,11 @@ class Conta {
 	}
 	
 	public void setAgencia(int agencia) {
+		if(agencia <= 0) {                          //alterar o metodo para não ter numero negativo em agencia
+			System.out.println("nao pode valor menor igual a zero");
+			return;
+		}
+		
 		this.agencia = agencia;
 	}
 	
